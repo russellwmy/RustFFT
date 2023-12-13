@@ -2,6 +2,8 @@ use std::sync::Arc;
 
 use num_complex::Complex;
 use num_traits::{Float, One, Zero};
+use alloc::boxed::Box;
+use alloc::{vec, vec::Vec};
 
 use rand::distributions::{uniform::SampleUniform, Distribution, Uniform};
 use rand::{rngs::StdRng, SeedableRng};
