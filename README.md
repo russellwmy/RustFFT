@@ -67,6 +67,10 @@ If you run your SIMD accelerated code on an unsupported platform, WebAssembly wi
 
 On other platforms than WASM, this feature does nothing and RustFFT will behave like it is not set.
 
+### std
+
+The scalar implementation (no avx, sse, neon or wasm SIMD) is available for no-std targets. To build the crate as no-std simply disable default fetures.
+
 ## Stability/Future Breaking Changes
 
 The latest version is 6.2 - Version 5.0 was released at the beginning of 2022 and contains several breaking API changes from previous versions. For users on very old version of RustFFT, check out the [Upgrade Guide](/UpgradeGuide4to5.md) for a walkthrough of the changes RustFFT 5.0 requires to upgrade. In the interest of stability, we're committing to making no more breaking changes for 3 years, aka until 2024.
