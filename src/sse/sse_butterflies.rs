@@ -243,7 +243,7 @@ macro_rules! boilerplate_fft_sse_common_butterfly {
 
 pub struct SseF32Butterfly1<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_sse_f32_butterfly!(SseF32Butterfly1, 1, |this: &SseF32Butterfly1<_>| this
@@ -256,7 +256,7 @@ impl<T: FftNum> SseF32Butterfly1<T> {
         assert_f32::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
     #[inline(always)]
@@ -281,7 +281,7 @@ impl<T: FftNum> SseF32Butterfly1<T> {
 
 pub struct SseF64Butterfly1<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_sse_f64_butterfly!(SseF64Butterfly1, 1, |this: &SseF64Butterfly1<_>| this
@@ -294,7 +294,7 @@ impl<T: FftNum> SseF64Butterfly1<T> {
         assert_f64::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
     #[inline(always)]
@@ -313,7 +313,7 @@ impl<T: FftNum> SseF64Butterfly1<T> {
 
 pub struct SseF32Butterfly2<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_sse_f32_butterfly!(SseF32Butterfly2, 2, |this: &SseF32Butterfly2<_>| this
@@ -326,7 +326,7 @@ impl<T: FftNum> SseF32Butterfly2<T> {
         assert_f32::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
     #[inline(always)]
@@ -405,7 +405,7 @@ unsafe fn solo_fft2_f32(values: __m128) -> __m128 {
 
 pub struct SseF64Butterfly2<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_sse_f64_butterfly!(SseF64Butterfly2, 2, |this: &SseF64Butterfly2<_>| this
@@ -418,7 +418,7 @@ impl<T: FftNum> SseF64Butterfly2<T> {
         assert_f64::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
 
@@ -459,7 +459,7 @@ pub(crate) unsafe fn solo_fft2_f64(left: __m128d, right: __m128d) -> [__m128d; 2
 
 pub struct SseF32Butterfly3<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F32,
     twiddle: __m128,
     twiddle1re: __m128,
@@ -481,7 +481,7 @@ impl<T: FftNum> SseF32Butterfly3<T> {
         let twiddle1im = unsafe { _mm_set_ps(tw1.im, tw1.im, tw1.im, tw1.im) };
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle,
             twiddle1re,
@@ -574,7 +574,7 @@ impl<T: FftNum> SseF32Butterfly3<T> {
 
 pub struct SseF64Butterfly3<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F64,
     twiddle1re: __m128d,
     twiddle1im: __m128d,
@@ -595,7 +595,7 @@ impl<T: FftNum> SseF64Butterfly3<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle1re,
             twiddle1im,
@@ -650,7 +650,7 @@ impl<T: FftNum> SseF64Butterfly3<T> {
 
 pub struct SseF32Butterfly4<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F32,
 }
 
@@ -669,7 +669,7 @@ impl<T: FftNum> SseF32Butterfly4<T> {
         };
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
         }
     }
@@ -766,7 +766,7 @@ impl<T: FftNum> SseF32Butterfly4<T> {
 
 pub struct SseF64Butterfly4<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F64,
 }
 
@@ -786,7 +786,7 @@ impl<T: FftNum> SseF64Butterfly4<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
         }
     }
@@ -840,7 +840,7 @@ impl<T: FftNum> SseF64Butterfly4<T> {
 
 pub struct SseF32Butterfly5<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F32,
     twiddle12re: __m128,
     twiddle21re: __m128,
@@ -874,7 +874,7 @@ impl<T: FftNum> SseF32Butterfly5<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle12re,
             twiddle21re,
@@ -1012,7 +1012,7 @@ impl<T: FftNum> SseF32Butterfly5<T> {
 
 pub struct SseF64Butterfly5<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F64,
     twiddle1re: __m128d,
     twiddle1im: __m128d,
@@ -1038,7 +1038,7 @@ impl<T: FftNum> SseF64Butterfly5<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle1re,
             twiddle1im,
@@ -1118,7 +1118,7 @@ impl<T: FftNum> SseF64Butterfly5<T> {
 
 pub struct SseF32Butterfly6<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF32Butterfly3<T>,
 }
 
@@ -1134,7 +1134,7 @@ impl<T: FftNum> SseF32Butterfly6<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
         }
     }
@@ -1233,7 +1233,7 @@ impl<T: FftNum> SseF32Butterfly6<T> {
 
 pub struct SseF64Butterfly6<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF64Butterfly3<T>,
 }
 
@@ -1249,7 +1249,7 @@ impl<T: FftNum> SseF64Butterfly6<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
         }
     }
@@ -1500,7 +1500,7 @@ impl<T: FftNum> SseF64Butterfly8<T> {
 //
 pub struct SseF32Butterfly9<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF32Butterfly3<T>,
     twiddle1: __m128,
     twiddle2: __m128,
@@ -1524,7 +1524,7 @@ impl<T: FftNum> SseF32Butterfly9<T> {
         let twiddle4 = unsafe { _mm_set_ps(tw4.im, tw4.re, tw4.im, tw4.re) };
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             twiddle1,
             twiddle2,
@@ -1623,7 +1623,7 @@ impl<T: FftNum> SseF32Butterfly9<T> {
 
 pub struct SseF64Butterfly9<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF64Butterfly3<T>,
     twiddle1: __m128d,
     twiddle2: __m128d,
@@ -1647,7 +1647,7 @@ impl<T: FftNum> SseF64Butterfly9<T> {
         let twiddle4 = unsafe { _mm_set_pd(tw4.im, tw4.re) };
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             twiddle1,
             twiddle2,
@@ -1698,7 +1698,7 @@ impl<T: FftNum> SseF64Butterfly9<T> {
 
 pub struct SseF32Butterfly10<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf5: SseF32Butterfly5<T>,
 }
 
@@ -1713,7 +1713,7 @@ impl<T: FftNum> SseF32Butterfly10<T> {
         let bf5 = SseF32Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf5,
         }
     }
@@ -1810,7 +1810,7 @@ impl<T: FftNum> SseF32Butterfly10<T> {
 
 pub struct SseF64Butterfly10<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf2: SseF64Butterfly2<T>,
     bf5: SseF64Butterfly5<T>,
 }
@@ -1827,7 +1827,7 @@ impl<T: FftNum> SseF64Butterfly10<T> {
         let bf5 = SseF64Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf2,
             bf5,
         }
@@ -1880,7 +1880,7 @@ impl<T: FftNum> SseF64Butterfly10<T> {
 
 pub struct SseF32Butterfly12<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF32Butterfly3<T>,
     bf4: SseF32Butterfly4<T>,
 }
@@ -1897,7 +1897,7 @@ impl<T: FftNum> SseF32Butterfly12<T> {
         let bf4 = SseF32Butterfly4::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf4,
         }
@@ -2012,7 +2012,7 @@ impl<T: FftNum> SseF32Butterfly12<T> {
 
 pub struct SseF64Butterfly12<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF64Butterfly3<T>,
     bf4: SseF64Butterfly4<T>,
 }
@@ -2029,7 +2029,7 @@ impl<T: FftNum> SseF64Butterfly12<T> {
         let bf4 = SseF64Butterfly4::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf4,
         }
@@ -2082,7 +2082,7 @@ impl<T: FftNum> SseF64Butterfly12<T> {
 //
 pub struct SseF32Butterfly15<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF32Butterfly3<T>,
     bf5: SseF32Butterfly5<T>,
 }
@@ -2099,7 +2099,7 @@ impl<T: FftNum> SseF32Butterfly15<T> {
         let bf5 = SseF32Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf5,
         }
@@ -2213,7 +2213,7 @@ impl<T: FftNum> SseF32Butterfly15<T> {
 
 pub struct SseF64Butterfly15<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: SseF64Butterfly3<T>,
     bf5: SseF64Butterfly5<T>,
 }
@@ -2230,7 +2230,7 @@ impl<T: FftNum> SseF64Butterfly15<T> {
         let bf5 = SseF64Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf5,
         }
@@ -3383,7 +3383,7 @@ mod unit_tests {
             dft.process(&mut val_b);
             let res_both = bf4.perform_parallel_fft_direct([p1, p2, p3, p4]);
 
-            let res = std::mem::transmute::<[__m128; 4], [Complex<f32>; 8]>(res_both);
+            let res = core::mem::transmute::<[__m128; 4], [Complex<f32>; 8]>(res_both);
             let sse_res_a = [res[0], res[2], res[4], res[6]];
             let sse_res_b = [res[1], res[3], res[5], res[7]];
             assert!(compare_vectors(&val_a, &sse_res_a));
@@ -3398,8 +3398,8 @@ mod unit_tests {
             let nbr1 = _mm_set_ps(4.0, 3.0, 2.0, 1.0);
             let first = extract_lo_lo_f32(nbr1, nbr2);
             let second = extract_hi_hi_f32(nbr1, nbr2);
-            let first = std::mem::transmute::<__m128, [Complex<f32>; 2]>(first);
-            let second = std::mem::transmute::<__m128, [Complex<f32>; 2]>(second);
+            let first = core::mem::transmute::<__m128, [Complex<f32>; 2]>(first);
+            let second = core::mem::transmute::<__m128, [Complex<f32>; 2]>(second);
             let first_expected = [Complex::new(1.0, 2.0), Complex::new(5.0, 6.0)];
             let second_expected = [Complex::new(3.0, 4.0), Complex::new(7.0, 8.0)];
             assert_eq!(first, first_expected);
