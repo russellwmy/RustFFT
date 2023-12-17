@@ -201,7 +201,7 @@ macro_rules! boilerplate_fft_wasm_simd_common_butterfly {
 
 pub struct WasmSimdF32Butterfly1<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_wasm_simd_f32_butterfly!(
@@ -220,7 +220,7 @@ impl<T: FftNum> WasmSimdF32Butterfly1<T> {
         assert_f32::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
     #[inline(always)]
@@ -248,7 +248,7 @@ impl<T: FftNum> WasmSimdF32Butterfly1<T> {
 
 pub struct WasmSimdF64Butterfly1<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_wasm_simd_f64_butterfly!(
@@ -267,7 +267,7 @@ impl<T: FftNum> WasmSimdF64Butterfly1<T> {
         assert_f64::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
     #[inline(always)]
@@ -286,7 +286,7 @@ impl<T: FftNum> WasmSimdF64Butterfly1<T> {
 
 pub struct WasmSimdF32Butterfly2<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_wasm_simd_f32_butterfly!(
@@ -305,7 +305,7 @@ impl<T: FftNum> WasmSimdF32Butterfly2<T> {
         assert_f32::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
     #[inline(always)]
@@ -388,7 +388,7 @@ unsafe fn solo_fft2_f32(values: v128) -> v128 {
 
 pub struct WasmSimdF64Butterfly2<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
 }
 
 boilerplate_fft_wasm_simd_f64_butterfly!(
@@ -407,7 +407,7 @@ impl<T: FftNum> WasmSimdF64Butterfly2<T> {
         assert_f64::<T>();
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
         }
     }
 
@@ -444,7 +444,7 @@ pub(crate) unsafe fn solo_fft2_f64(left: v128, right: v128) -> [v128; 2] {
 
 pub struct WasmSimdF32Butterfly3<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F32,
     twiddle: v128,
     twiddle1re: v128,
@@ -472,7 +472,7 @@ impl<T: FftNum> WasmSimdF32Butterfly3<T> {
         let twiddle1im = f32x4_splat(tw1.im);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle,
             twiddle1re,
@@ -565,7 +565,7 @@ impl<T: FftNum> WasmSimdF32Butterfly3<T> {
 
 pub struct WasmSimdF64Butterfly3<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F64,
     twiddle1re: v128,
     twiddle1im: v128,
@@ -592,7 +592,7 @@ impl<T: FftNum> WasmSimdF64Butterfly3<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle1re,
             twiddle1im,
@@ -647,7 +647,7 @@ impl<T: FftNum> WasmSimdF64Butterfly3<T> {
 
 pub struct WasmSimdF32Butterfly4<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F32,
 }
 
@@ -672,7 +672,7 @@ impl<T: FftNum> WasmSimdF32Butterfly4<T> {
         };
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
         }
     }
@@ -768,7 +768,7 @@ impl<T: FftNum> WasmSimdF32Butterfly4<T> {
 
 pub struct WasmSimdF64Butterfly4<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F64,
 }
 
@@ -794,7 +794,7 @@ impl<T: FftNum> WasmSimdF64Butterfly4<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
         }
     }
@@ -848,7 +848,7 @@ impl<T: FftNum> WasmSimdF64Butterfly4<T> {
 
 pub struct WasmSimdF32Butterfly5<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F32,
     twiddle12re: v128,
     twiddle21re: v128,
@@ -888,7 +888,7 @@ impl<T: FftNum> WasmSimdF32Butterfly5<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle12re,
             twiddle21re,
@@ -1025,7 +1025,7 @@ impl<T: FftNum> WasmSimdF32Butterfly5<T> {
 
 pub struct WasmSimdF64Butterfly5<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     rotate: Rotate90F64,
     twiddle1re: v128,
     twiddle1im: v128,
@@ -1057,7 +1057,7 @@ impl<T: FftNum> WasmSimdF64Butterfly5<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             rotate,
             twiddle1re,
             twiddle1im,
@@ -1137,7 +1137,7 @@ impl<T: FftNum> WasmSimdF64Butterfly5<T> {
 
 pub struct WasmSimdF32Butterfly6<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF32Butterfly3<T>,
 }
 
@@ -1159,7 +1159,7 @@ impl<T: FftNum> WasmSimdF32Butterfly6<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
         }
     }
@@ -1261,7 +1261,7 @@ impl<T: FftNum> WasmSimdF32Butterfly6<T> {
 
 pub struct WasmSimdF64Butterfly6<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF64Butterfly3<T>,
 }
 
@@ -1283,7 +1283,7 @@ impl<T: FftNum> WasmSimdF64Butterfly6<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
         }
     }
@@ -1564,7 +1564,7 @@ impl<T: FftNum> WasmSimdF64Butterfly8<T> {
 //
 pub struct WasmSimdF32Butterfly9<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF32Butterfly3<T>,
     twiddle1: v128,
     twiddle2: v128,
@@ -1595,7 +1595,7 @@ impl<T: FftNum> WasmSimdF32Butterfly9<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             twiddle1,
             twiddle2,
@@ -1697,7 +1697,7 @@ impl<T: FftNum> WasmSimdF32Butterfly9<T> {
 
 pub struct WasmSimdF64Butterfly9<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF64Butterfly3<T>,
     twiddle1: v128,
     twiddle2: v128,
@@ -1728,7 +1728,7 @@ impl<T: FftNum> WasmSimdF64Butterfly9<T> {
 
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             twiddle1,
             twiddle2,
@@ -1779,7 +1779,7 @@ impl<T: FftNum> WasmSimdF64Butterfly9<T> {
 
 pub struct WasmSimdF32Butterfly10<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf5: WasmSimdF32Butterfly5<T>,
 }
 
@@ -1800,7 +1800,7 @@ impl<T: FftNum> WasmSimdF32Butterfly10<T> {
         let bf5 = WasmSimdF32Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf5,
         }
     }
@@ -1900,7 +1900,7 @@ impl<T: FftNum> WasmSimdF32Butterfly10<T> {
 
 pub struct WasmSimdF64Butterfly10<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf2: WasmSimdF64Butterfly2<T>,
     bf5: WasmSimdF64Butterfly5<T>,
 }
@@ -1923,7 +1923,7 @@ impl<T: FftNum> WasmSimdF64Butterfly10<T> {
         let bf5 = WasmSimdF64Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf2,
             bf5,
         }
@@ -1976,7 +1976,7 @@ impl<T: FftNum> WasmSimdF64Butterfly10<T> {
 
 pub struct WasmSimdF32Butterfly12<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF32Butterfly3<T>,
     bf4: WasmSimdF32Butterfly4<T>,
 }
@@ -1999,7 +1999,7 @@ impl<T: FftNum> WasmSimdF32Butterfly12<T> {
         let bf4 = WasmSimdF32Butterfly4::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf4,
         }
@@ -2117,7 +2117,7 @@ impl<T: FftNum> WasmSimdF32Butterfly12<T> {
 
 pub struct WasmSimdF64Butterfly12<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF64Butterfly3<T>,
     bf4: WasmSimdF64Butterfly4<T>,
 }
@@ -2140,7 +2140,7 @@ impl<T: FftNum> WasmSimdF64Butterfly12<T> {
         let bf4 = WasmSimdF64Butterfly4::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf4,
         }
@@ -2193,7 +2193,7 @@ impl<T: FftNum> WasmSimdF64Butterfly12<T> {
 //
 pub struct WasmSimdF32Butterfly15<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF32Butterfly3<T>,
     bf5: WasmSimdF32Butterfly5<T>,
 }
@@ -2216,7 +2216,7 @@ impl<T: FftNum> WasmSimdF32Butterfly15<T> {
         let bf5 = WasmSimdF32Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf5,
         }
@@ -2333,7 +2333,7 @@ impl<T: FftNum> WasmSimdF32Butterfly15<T> {
 
 pub struct WasmSimdF64Butterfly15<T> {
     direction: FftDirection,
-    _phantom: std::marker::PhantomData<T>,
+    _phantom: core::marker::PhantomData<T>,
     bf3: WasmSimdF64Butterfly3<T>,
     bf5: WasmSimdF64Butterfly5<T>,
 }
@@ -2356,7 +2356,7 @@ impl<T: FftNum> WasmSimdF64Butterfly15<T> {
         let bf5 = WasmSimdF64Butterfly5::new(direction);
         Self {
             direction,
-            _phantom: std::marker::PhantomData,
+            _phantom: core::marker::PhantomData,
             bf3,
             bf5,
         }
@@ -3575,7 +3575,7 @@ mod unit_tests {
             dft.process(&mut val);
             let res_packed = bf2.perform_fft_direct(in_packed);
 
-            let res = std::mem::transmute::<v128, [Complex<f32>; 2]>(res_packed);
+            let res = core::mem::transmute::<v128, [Complex<f32>; 2]>(res_packed);
             assert_eq!(val[0], res[0]);
             assert_eq!(val[1], res[1]);
         }
@@ -3604,7 +3604,7 @@ mod unit_tests {
             dft.process(&mut val_b);
             let res_both = bf2.perform_parallel_fft_direct(p1, p2);
 
-            let res = std::mem::transmute::<[v128; 2], [Complex<f32>; 4]>(res_both);
+            let res = core::mem::transmute::<[v128; 2], [Complex<f32>; 4]>(res_both);
             let wasmsimd_res_a = [res[0], res[2]];
             let wasmsimd_res_b = [res[1], res[3]];
             assert!(compare_vectors(&val_a, &wasmsimd_res_a));

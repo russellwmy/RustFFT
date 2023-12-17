@@ -1,8 +1,8 @@
 use core::arch::wasm32::*;
+use core::fmt::Debug;
+use core::ops::{Deref, DerefMut};
 use num_complex::Complex;
 use num_traits::Zero;
-use std::fmt::Debug;
-use std::ops::{Deref, DerefMut};
 
 use crate::{array_utils::DoubleBuf, twiddles, FftDirection};
 
