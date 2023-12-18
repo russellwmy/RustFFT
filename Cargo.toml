@@ -25,11 +25,13 @@ default = ["avx", "sse", "neon"]
 # If neither instruction set is available, it will fall back to the scalar code.  
 #
 # On AArch64, the "neon" feature enables compilation of Neon-accelerated code.
+#
+# The "no-std" feature makes the crate `no-std` and uses libm for math operations.
 avx = ["dep:std_detect"]
 sse = ["dep:std_detect"]
 neon = ["dep:std_detect"]
 wasm_simd = []
-libm = ["dep:libm", "primal-check/no-std"]
+no-std = ["dep:libm", "primal-check/no-std"]
 
 
 [dependencies]
