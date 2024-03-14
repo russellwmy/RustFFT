@@ -1,5 +1,3 @@
-use num_complex::Complex;
-
 use crate::algorithm::butterflies::{
     Butterfly1, Butterfly16, Butterfly2, Butterfly32, Butterfly4, Butterfly8,
 };
@@ -8,6 +6,7 @@ use crate::array_utils::{self, bitreversed_transpose};
 use crate::common::{fft_error_inplace, fft_error_outofplace, std_prelude::*};
 use crate::{common::FftNum, twiddles, FftDirection};
 use crate::{Direction, Fft, Length};
+use num_complex::Complex;
 
 /// FFT algorithm optimized for power-of-two sizes
 ///

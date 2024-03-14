@@ -4,6 +4,8 @@ use crate::common::std_prelude::*;
 #[cfg(feature = "no-std")]
 use crate::common::FftNum;
 
+use crate::HashMap;
+
 use num_traits::{One, PrimInt, Zero};
 
 pub fn primitive_root(prime: u64) -> Option<u64> {

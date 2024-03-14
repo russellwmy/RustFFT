@@ -1,7 +1,6 @@
 use core::arch::aarch64::*;
 use core::fmt::Debug;
 use core::ops::{Deref, DerefMut};
-use core::ops::{Deref, DerefMut};
 use num_complex::Complex;
 use num_traits::Zero;
 

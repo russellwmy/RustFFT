@@ -107,7 +107,7 @@ impl MixedRadixPlan {
 /// setup time. (FFT instances created with one planner will never re-use data and buffers with FFT instances created
 /// by a different planner)
 ///
-/// Each FFT instance owns [`Arc`s](core::sync::Arc) to its internal data, rather than borrowing it from the planner, so it's perfectly
+/// Each FFT instance owns [`Arc`s](std::sync::Arc) to its internal data, rather than borrowing it from the planner, so it's perfectly
 /// safe to drop the planner after creating Fft instances.
 pub struct FftPlannerAvx<T: FftNum> {
     internal_planner: Box<dyn AvxPlannerInternalAPI<T>>,

@@ -436,7 +436,7 @@ mod neon {
         ///
         /// ~~~
         /// // Perform a forward Fft of size 1234
-        /// use std::sync::Arc;
+        /// use core::sync::Arc;
         /// use rustfft::{FftPlannerNeon, num_complex::Complex};
         ///
         /// if let Ok(mut planner) = FftPlannerNeon::new() {

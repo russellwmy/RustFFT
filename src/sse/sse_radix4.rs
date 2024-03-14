@@ -1,7 +1,7 @@
 use num_complex::Complex;
 
-use std::any::TypeId;
-use std::sync::Arc;
+use core::any::TypeId;
+use core::sync::Arc;
 
 use crate::array_utils::{self, bitreversed_transpose, workaround_transmute_mut};
 use crate::common::{fft_error_inplace, fft_error_outofplace, std_prelude::*};

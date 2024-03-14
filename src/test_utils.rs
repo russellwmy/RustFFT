@@ -1,3 +1,5 @@
+use crate::Arc;
+
 use num_complex::Complex;
 use num_traits::{Float, One, Zero};
 
