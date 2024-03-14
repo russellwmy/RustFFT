@@ -49,10 +49,10 @@ pub(crate) mod std_prelude {
     pub use hashbrown::HashMap;
 
     #[cfg(target_arch = "x86_64")]
-    pub use std_detect::is_x86_feature_detected;
+    pub use core::arch::is_x86_feature_detected;
 
     #[cfg(target_arch = "aarch64")]
-    pub use std_detect::is_aarch64_feature_detected;
+    pub use core::arch::is_aarch64_feature_detected;
 }
 
 #[cfg(not(feature = "no-std"))]

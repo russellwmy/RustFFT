@@ -29,7 +29,7 @@ avx = []
 sse = []
 neon = []
 wasm_simd = []
-no-std = ["dep:libm", "dep:std_detect", "primal-check/no-std"]
+no-std = ["dep:libm", "primal-check/no-std"]
 
 
 [dependencies]
@@ -41,8 +41,6 @@ transpose = { version = "0.2", default-features = false }
 primal-check = { git = "https://github.com/piotrfila/primal.git", ver = "48526bbba548946ef85d6736b9e69544dffb2100" }
 hashbrown = "0.14.3"
 libm = { version = "0.2.8", optional = true }
-# the crates.io version is out of date
-std_detect = { git = "https://github.com/rust-lang/stdarch.git", rev = "821a641b4b43b31a9aa7749141abd43878d019b1", optional = true }
 
 [dev-dependencies]
 rand = "0.8"
